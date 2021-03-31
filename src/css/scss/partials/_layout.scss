@@ -1,0 +1,141 @@
+.container {
+	height: 100%;
+	width: 100%;
+	transition: $transition;
+	padding: 25px 25px 0;
+	color: $clr-primary-1;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 70%;
+		height: 100%;
+		background: url('./../../../assets/images/pattern-curve.svg');
+		background-position: bottom;
+		background-clip: border-box;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: -1;
+
+		@media only screen and (min-height: 820px) {
+			width: 40%;
+		}
+		@media only screen and (min-width: $desktop) {
+			width: 40%;
+		}
+	}
+
+	@media only screen and (min-height: 820px) {
+		height: 100vh !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	@media only screen and (max-height: 568px) {
+		height: 100% !important;
+	}
+
+	.wrapper {
+		margin: 0;
+		width: 100%;
+		max-width: 1121px;
+
+		@media only screen and (min-width: 820px) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		@media only screen and (min-width: $desktop) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+
+			position: relative;
+		}
+	}
+
+	.img-wrapper {
+		width: 100%;
+		max-width: 327px;
+		height: 308px;
+		background: url('./../../../assets/images/pattern-bg.svg');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		position: relative;
+		margin: 0 auto;
+		margin-bottom: 45px;
+
+		transition: $transition;
+
+		@media only screen and (min-width: 820px) {
+			max-width: 696px;
+			max-height: 660px;
+			height: 400px;
+		}
+		@media only screen and (min-width: $desktop) {
+			height: 660px;
+			width: 660px;
+
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.button-wrapper {
+			position: absolute;
+			bottom: 2%;
+			width: auto;
+
+			background-color: white;
+			border-radius: 2em;
+			overflow: hidden;
+
+			display: flex;
+
+			@media only screen and (min-width: 820px) {
+				bottom: 8%;
+			}
+			@media only screen and (min-width: $desktop) {
+				bottom: 5%;
+				left: 16%;
+			}
+
+			button {
+				background-color: transparent;
+				border: none;
+				margin-left: 0.2em;
+				margin-right: 0.2em;
+				cursor: pointer;
+
+				display: flex;
+				flex-direction: row;
+
+				padding: 0.4em;
+
+				.btn-icon {
+					width: 10px;
+				}
+
+				@media only screen and (min-width: $desktop) {
+					padding: 0.7em;
+				}
+			}
+		}
+	}
+
+	h1,
+	p {
+		margin: 0;
+	}
+}
